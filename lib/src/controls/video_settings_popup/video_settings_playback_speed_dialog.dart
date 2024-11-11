@@ -5,9 +5,9 @@ import 'package:flutter/material.dart';
 class VideoSettingsPlaybackSpeedDialog extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   const VideoSettingsPlaybackSpeedDialog({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   State<VideoSettingsPlaybackSpeedDialog> createState() =>

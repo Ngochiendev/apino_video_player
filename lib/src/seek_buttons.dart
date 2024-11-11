@@ -4,8 +4,7 @@ import 'package:flutter/material.dart';
 class SeekButtons extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
 
-  const SeekButtons({Key? key, required this.customVideoPlayerController})
-      : super(key: key);
+  const SeekButtons({super.key, required this.customVideoPlayerController});
 
   @override
   State<SeekButtons> createState() => _SeekButtonsState();

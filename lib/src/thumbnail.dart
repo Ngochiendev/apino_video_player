@@ -4,9 +4,9 @@ import 'package:flutter/cupertino.dart';
 class Thumbnail extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   const Thumbnail({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

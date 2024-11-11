@@ -2,15 +2,15 @@ import 'package:appinio_video_player/src/custom_video_player_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:appinio_video_player/src/controls/progress_bar_indicator.dart';
 import 'package:appinio_video_player/src/controls/seeker.dart';
-import 'package:cached_video_player/cached_video_player.dart';
+import 'package:cached_video_player_plus/cached_video_player_plus.dart';
 
 class CustomVideoPlayerProgressBar extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
 
   const CustomVideoPlayerProgressBar({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   _VideoProgressIndicatorState createState() => _VideoProgressIndicatorState();
@@ -120,8 +120,8 @@ class _VideoProgressIndicatorState extends State<CustomVideoPlayerProgressBar> {
       if (widget.customVideoPlayerController.customVideoPlayerSettings
           .customVideoPlayerProgressBarSettings.allowScrubbing) {
         return CustomVideoPlayerSeeker(
-          child: paddedProgressIndicator,
           customvVideoPlayerController: widget.customVideoPlayerController,
+          child: paddedProgressIndicator,
         );
       } else {
         return paddedProgressIndicator;

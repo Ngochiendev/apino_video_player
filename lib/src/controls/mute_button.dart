@@ -6,10 +6,10 @@ class CustomVideoPlayerMuteButton extends StatefulWidget {
   final Function fadeOutOnPlay;
 
   const CustomVideoPlayerMuteButton({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.fadeOutOnPlay,
-  }) : super(key: key);
+  });
 
   @override
   State<CustomVideoPlayerMuteButton> createState() =>
@@ -45,7 +45,7 @@ class _CustomVideoPlayerMuteButtonState
 }
 
 class CustomVideoMuteButton extends StatelessWidget {
-  const CustomVideoMuteButton({Key? key}) : super(key: key);
+  const CustomVideoMuteButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +60,7 @@ class CustomVideoMuteButton extends StatelessWidget {
 }
 
 class CustomVideoUnMuteButton extends StatelessWidget {
-  const CustomVideoUnMuteButton({Key? key}) : super(key: key);
+  const CustomVideoUnMuteButton({super.key});
 
   @override
   Widget build(BuildContext context) {

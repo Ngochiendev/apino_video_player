@@ -7,7 +7,7 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
+  const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -23,14 +23,14 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  const MyHomePage({Key? key}) : super(key: key);
+  const MyHomePage({super.key});
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  late CachedVideoPlayerController _videoPlayerController,
+  late CachedVideoPlayerPlusController _videoPlayerController,
       _videoPlayerController2,
       _videoPlayerController3;
 
@@ -49,11 +49,27 @@ class _MyHomePageState extends State<MyHomePage> {
   void initState() {
     super.initState();
 
-    _videoPlayerController = CachedVideoPlayerController.network(
-      longVideo,
-    )..initialize().then((value) => setState(() {}));
-    _videoPlayerController2 = CachedVideoPlayerController.network(video240);
-    _videoPlayerController3 = CachedVideoPlayerController.network(video480);
+    _videoPlayerController = CachedVideoPlayerPlusController.networkUrl(
+      Uri.parse(longVideo),
+      invalidateCacheIfOlderThan: const Duration(days: 69),
+    )..initialize().then((value) async {
+        _videoPlayerController.play();
+        setState(() {});
+      });
+    _videoPlayerController2 = CachedVideoPlayerPlusController.networkUrl(
+      Uri.parse(video240),
+      invalidateCacheIfOlderThan: const Duration(days: 69),
+    )..initialize().then((value) async {
+        _videoPlayerController2.play();
+        setState(() {});
+      });
+    _videoPlayerController3 = CachedVideoPlayerPlusController.networkUrl(
+      Uri.parse(video480),
+      invalidateCacheIfOlderThan: const Duration(days: 69),
+    )..initialize().then((value) async {
+        _videoPlayerController3.play();
+        setState(() {});
+      });
     _customVideoPlayerController = CustomVideoPlayerController(
       context: context,
       videoPlayerController: _videoPlayerController,

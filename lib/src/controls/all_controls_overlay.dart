@@ -7,10 +7,10 @@ class AllControlsOverlay extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final Function updateVideoState;
   const AllControlsOverlay({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.updateVideoState,
-  }) : super(key: key);
+  });
 
   @override
   State<AllControlsOverlay> createState() => _AllControlsOverlayState();

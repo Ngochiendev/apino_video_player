@@ -5,10 +5,10 @@ class CustomVideoPlayerPlayPauseButton extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final Function fadeOutOnPlay;
   const CustomVideoPlayerPlayPauseButton({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.fadeOutOnPlay,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class CustomVideoPlayerPlayPauseButton extends StatelessWidget {
 }
 
 class CustomVideoPlayerPlayButton extends StatelessWidget {
-  const CustomVideoPlayerPlayButton({Key? key}) : super(key: key);
+  const CustomVideoPlayerPlayButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +58,7 @@ class CustomVideoPlayerPlayButton extends StatelessWidget {
 }
 
 class CustomVideoPlayerPauseButton extends StatelessWidget {
-  const CustomVideoPlayerPauseButton({Key? key}) : super(key: key);
+  const CustomVideoPlayerPauseButton({super.key});
 
   @override
   Widget build(BuildContext context) {

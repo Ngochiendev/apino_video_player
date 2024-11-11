@@ -5,10 +5,10 @@ class CustomVideoPlayerFullscreenButton extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final bool? isFullscreen;
   const CustomVideoPlayerFullscreenButton({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     this.isFullscreen,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +31,7 @@ class CustomVideoPlayerFullscreenButton extends StatelessWidget {
 }
 
 class CustomVideoPlayerEnterFullscreenButton extends StatelessWidget {
-  const CustomVideoPlayerEnterFullscreenButton({Key? key}) : super(key: key);
+  const CustomVideoPlayerEnterFullscreenButton({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -46,7 +46,7 @@ class CustomVideoPlayerEnterFullscreenButton extends StatelessWidget {
 }
 
 class CustomVideoPlayerExitFullscreenButton extends StatelessWidget {
-  const CustomVideoPlayerExitFullscreenButton({Key? key}) : super(key: key);
+  const CustomVideoPlayerExitFullscreenButton({super.key});
 
   @override
   Widget build(BuildContext context) {

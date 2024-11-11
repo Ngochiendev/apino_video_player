@@ -9,12 +9,12 @@ class VideoSettingsDialogItem extends StatefulWidget {
   final CustomVideoPlayerPopupSettings popupSettings;
 
   const VideoSettingsDialogItem({
-    Key? key,
+    super.key,
     required this.title,
     required this.onPressed,
     required this.popupSettings,
     this.selected,
-  }) : super(key: key);
+  });
 
   @override
   State<VideoSettingsDialogItem> createState() =>

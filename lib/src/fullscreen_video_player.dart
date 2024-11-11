@@ -6,18 +6,19 @@ class FullscreenVideoPlayer extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
 
   const FullscreenVideoPlayer({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return PopScope(
-      onPopInvoked: (didPop) {
-        if (didPop) {
-          customVideoPlayerController.setFullscreen(false);
-        }
-      },
+      canPop: customVideoPlayerController.isFullscreen,
+      // onPopInvoked: (didPop) {
+      //   if (didPop) {
+      //     customVideoPlayerController.setFullscreen(false);
+      //   }
+      // },
       child: Scaffold(
         resizeToAvoidBottomInset: false,
         body: Container(

@@ -6,23 +6,20 @@ repository: https://github.com/appinioGmbH/flutter_packages
 publish_to: none
 
 environment:
-  sdk: '>=3.2.5 <4.0.0'
-  flutter: ">=1.17.0"
+  sdk: ">=3.3.3 <4.0.0"
 
 dependencies:
   flutter:
     sdk: flutter
-    
-  cached_video_player:
-    git:
-      url: https://github.com/vikram25897/flutter_cached_video_player
-      ref: feature/gradle_version_bump
-
-  
+  cached_video_player_plus: ^3.0.3
+  # cached_video_player:
+  #   git:
+  #     url: https://github.com/vikram25897/flutter_cached_video_player
+  #     ref: feature/gradle_version_bump
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^1.0.0
+  flutter_lints: ^4.0.0
 
 flutter:

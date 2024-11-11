@@ -6,9 +6,9 @@ class VolumeControls extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
 
   const VolumeControls({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   State<VolumeControls> createState() => _VolumeControlsState();
@@ -70,9 +70,9 @@ class _VolumeControlsState extends State<VolumeControls> {
 
   void onPanUpdate(DragUpdateDetails dragUpdateDetails) {
     double maxSpeedThreshold = 100.0;
-    final RenderBox? _renderBoxRed =
+    final RenderBox renderBoxRed =
         _globalKey.currentContext?.findRenderObject() as RenderBox;
-    final double? height = _renderBoxRed?.size.height;
+    final double height = renderBoxRed.size.height;
     final double volume =
         widget.customVideoPlayerController.videoPlayerController.value.volume;
     double factor = 0.03;
@@ -87,15 +87,13 @@ class _VolumeControlsState extends State<VolumeControls> {
       widget.customVideoPlayerController.videoPlayerController
           .setVolume(volume - factor);
       setState(() {
-        _progress =
-            ((volume - factor) < 0 ? 0 : (volume - factor)) * (height ?? 0);
+        _progress = ((volume - factor) < 0 ? 0 : (volume - factor)) * height;
       });
     } else if (dragUpdateDetails.delta.dy < 0) {
       widget.customVideoPlayerController.videoPlayerController
           .setVolume(volume + factor);
       setState(() {
-        _progress =
-            ((volume + factor) > 1 ? 1 : (volume + factor)) * (height ?? 0);
+        _progress = ((volume + factor) > 1 ? 1 : (volume + factor)) * height;
       });
     }
   }
@@ -106,10 +104,10 @@ class SlideController extends StatefulWidget {
   final GlobalKey widgetKey;
 
   const SlideController({
-    Key? key,
+    super.key,
     required this.child,
     required this.widgetKey,
-  }) : super(key: key);
+  });
 
   @override
   State<SlideController> createState() => _SlideControllerState();

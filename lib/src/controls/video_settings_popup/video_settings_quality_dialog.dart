@@ -7,10 +7,10 @@ class VideoSettingsQualityDialog extends StatefulWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final Function updateView;
   const VideoSettingsQualityDialog({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.updateView,
-  }) : super(key: key);
+  });
 
   @override
   State<VideoSettingsQualityDialog> createState() =>
@@ -60,7 +60,8 @@ class _VideoSettingsQualityDialogState
                 padding: const EdgeInsets.all(0),
                 shrinkWrap: true,
                 children: [
-                  for (MapEntry<String, CachedVideoPlayerController> videoSource
+                  for (MapEntry<String,
+                          CachedVideoPlayerPlusController> videoSource
                       in widget.customVideoPlayerController
                           .additionalVideoSources!.entries)
                     VideoSettingsDialogItem(

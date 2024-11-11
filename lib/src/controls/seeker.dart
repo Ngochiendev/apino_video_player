@@ -5,10 +5,10 @@ class CustomVideoPlayerSeeker extends StatefulWidget {
   final Widget child;
   final CustomVideoPlayerController customvVideoPlayerController;
   const CustomVideoPlayerSeeker({
-    Key? key,
+    super.key,
     required this.child,
     required this.customvVideoPlayerController,
-  }) : super(key: key);
+  });
 
   @override
   _CustomVideoPlayerSeekerState createState() =>

@@ -9,12 +9,12 @@ class CustomVideoPlayerProgressIndicator extends StatefulWidget {
   final Color backgroundColor;
 
   const CustomVideoPlayerProgressIndicator({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.progressColor,
     required this.backgroundColor,
     required this.progress,
-  }) : super(key: key);
+  });
 
   @override
   _State createState() => _State();
@@ -78,10 +78,10 @@ class WidgetSize extends StatefulWidget {
   final Function onChange;
 
   const WidgetSize({
-    Key? key,
+    super.key,
     required this.onChange,
     required this.child,
-  }) : super(key: key);
+  });
 
   @override
   _WidgetSizeState createState() => _WidgetSizeState();

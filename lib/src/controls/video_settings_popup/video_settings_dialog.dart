@@ -10,10 +10,10 @@ class VideoSettingsDialog extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final Function updateViewOnClose;
   const VideoSettingsDialog({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.updateViewOnClose,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

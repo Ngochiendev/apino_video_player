@@ -7,10 +7,10 @@ class VideoSettingsButton extends StatelessWidget {
   final CustomVideoPlayerController customVideoPlayerController;
   final Function updateVideoState;
   const VideoSettingsButton({
-    Key? key,
+    super.key,
     required this.customVideoPlayerController,
     required this.updateVideoState,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class VideoSettingsButton extends StatelessWidget {
 }
 
 class CustomVideoPlayerSettingsButton extends StatelessWidget {
-  const CustomVideoPlayerSettingsButton({Key? key}) : super(key: key);
+  const CustomVideoPlayerSettingsButton({super.key});
 
   @override
   Widget build(BuildContext context) {
